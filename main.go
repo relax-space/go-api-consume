@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"go-api-consumer/adapters"
-	"go-api-consumer/config"
-	"go-api-consumer/models"
+	"github.com/relax-space/go-api-consumer/adapters"
+	"github.com/relax-space/go-api-consumer/config"
+	"github.com/relax-space/go-api-consumer/models"
 	"log"
 	"net/http"
-	"nomni/utils/eventconsume"
+	"github.com/hublabs/common/eventconsume"
 	"os"
 	"os/signal"
 	"syscall"
@@ -40,7 +40,6 @@ func main() {
 	if err := adapters.Consume(c.ServiceName, c.EventBroker.Kafka,
 		adapters.EventFruit,
 		eventconsume.Recover(),
-		eventconsume.BehaviorLogger(c.ServiceName, c.BehaviorLog.Kafka),
 		eventconsume.ContextDB(c.ServiceName, db, c.Database.Logger.Kafka),
 	); err != nil {
 		panic(err)

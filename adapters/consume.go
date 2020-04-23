@@ -1,8 +1,8 @@
 package adapters
 
 import (
-	"go-api-consumer/models"
-	"nomni/utils/eventconsume"
+	"github.com/relax-space/go-api-consumer/models"
+	"github.com/hublabs/common/eventconsume"
 
 	"github.com/pangpanglabs/goutils/kafka"
 )

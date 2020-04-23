@@ -27,11 +27,10 @@ services:
     container_name: test-mysql
     environment:
     - MYSQL_ROOT_PASSWORD=1234
+    - MYSQL_DATABASE=fruit
     image: mysql:5.7.22
     ports:
     - 3312:3306
-    volumes:
-    - .:/docker-entrypoint-initdb.d
   zookeeper-server:
     container_name: test-zookeeper
     environment:
